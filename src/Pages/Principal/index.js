@@ -1,13 +1,9 @@
 
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
-import Login from '../Login/index';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 export default function Principal({navigaton}) {
   return (
     <View style={styles.container}>
-      <Text onPress={()=>navigaton.navigate('Login')}>login</Text>
       <TextInput
         style={styles.input}
         placeholder="Pesquisar Produto"

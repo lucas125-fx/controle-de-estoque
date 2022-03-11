@@ -10,7 +10,7 @@ export default function Login() {
       <View style={styles.container1}>
       <Image
       style={styles.logo}
-      source = {require('../../../assets/images/icon.png')}
+      source = {require('../../../assets/images/icon2.png')}
       />
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     // padding:0
   },
   input: {
-    
+    textAligin:'center',
     margin: 12,
     borderWidth: 1,
     color:'white',
@@ -82,13 +82,16 @@ const styles = StyleSheet.create({
    borderRadius:30,
    },
    botao:{
-     borderRadius:30,
-     backgroundColor:'black',
-     marginLeft:'20%',
-     marginRight:'20%',
-     justifyContent:'center',
-     alignItems: "center",
-     marginTop:'20%'
+    borderRadius: 30,
+    justifyContent:'center',
+    alignItems:'center',
+   backgroundColor:'black',
+   paddingBottom:'5px',
+   marginLeft:'30%',
+   marginRight:'30%',
+//   color:'white',
+//   // marginTop:20,
+//   // fontSize:100
 
    },
    logo:{
@@ -99,7 +102,7 @@ const styles = StyleSheet.create({
   },
   link:{
     // color='blue',
-    marginLeft:'20%'
+    marginLeft:'35%'
   }
  
 

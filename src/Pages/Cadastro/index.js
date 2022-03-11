@@ -9,7 +9,7 @@ export default function Cadastro() {
       <View style={styles.container1}>
       <Image
       style={styles.logo}
-      source={require('../../../assets/images/icon.png')}
+      source={require('../../../assets/images/icon2.png')}
       />
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
@@ -22,7 +22,7 @@ export default function Cadastro() {
         keyboardType='digite sua senha'    
       />
       <TextInput
-        style={styles.input1}
+        style={styles.input2}
         placeholder="Confirmar senha"      
         keyboardType='digite sua senha novamente'    
       />
@@ -70,35 +70,46 @@ const styles = StyleSheet.create({
     // padding:0
   },
   input: {
-    // height: 80,
-    margin: 12,
-    borderWidth: 1,
-    color:'white',
-    backgroundColor:'black',
-    // fontSize:40,
-    marginTop:'0%',
-    borderRadius:30
-  },
-   input1: {
    // height: 80,
    margin: 12,
    borderWidth: 1,
    color:'white',
    backgroundColor:'black',
    // fontSize:40,
-   marginTop:'2%',
+   marginTop:'10%',
    borderRadius:30,
-   },
+  },
+  input1: {
+ // height: 80,
+ margin: 12,
+ borderWidth: 1,
+ color:'white',
+ backgroundColor:'black',
+ // fontSize:40,
+ marginTop:'10%',
+ borderRadius:30,
+},
+  input2: {
+  // height: 80,
+  margin: 12,
+  borderWidth: 1,
+  color:'white',
+  backgroundColor:'black',
+  // fontSize:40,
+  marginTop:'10%',
+  borderRadius:30,
+},
    botao:{
-      justifyContent:'center',
-      alignItems:'center',
-     backgroundColor:'black',
-     paddingBottom:'5px',
-     marginLeft:'30%',
-     marginRight:'30%',
-  //   color:'white',
-  //   // marginTop:20,
-  //   // fontSize:100
+    borderRadius: 30,
+    justifyContent:'center',
+    alignItems:'center',
+   backgroundColor:'black',
+   paddingBottom:'5px',
+   marginLeft:'30%',
+   marginRight:'30%',
+//   color:'white',
+//   // marginTop:20,
+//   // fontSize:100
    },
    logo:{
       width: '55%',
@@ -110,8 +121,8 @@ const styles = StyleSheet.create({
   Link:{
     padding:'3px',
     color: 'blue',
-    marginLeft:'36%',
-    marginRight:'24%',
+    marginLeft:'35%',
+    
   }
  
 
