@@ -19,12 +19,10 @@ export default function Cadastro() {
       <TextInput
         style={styles.input1}
         placeholder="Senha"      
-        keyboardType='digite sua senha'    
       />
       <TextInput
         style={styles.input2}
-        placeholder="Confirmar senha"      
-        keyboardType='digite sua senha novamente'    
+        placeholder="Confirmar senha"             
       />
       <View >
       <TouchableOpacity

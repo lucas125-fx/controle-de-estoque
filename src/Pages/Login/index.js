@@ -20,7 +20,6 @@ export default function Login() {
         <TextInput
           style={styles.input1}
           placeholder="Digite sua Senha"
-          keyboardType='digite sua senha'
         />
         <View >
           <TouchableOpacity

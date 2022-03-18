@@ -5,7 +5,6 @@ import Principal from './src/Pages/Principal';
 import Qrcode from './src/Pages/Qrcode'
 import { NavigationContainer } from '@react-navigation/native';
 import{ createBottomTabNavigator }from'@react-navigation/bottom-tabs';
-import QrCode from './src/Pages/QrCode/';
 
 const Tab= createBottomTabNavigator();
 
