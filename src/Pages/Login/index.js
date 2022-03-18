@@ -6,35 +6,35 @@ import { StyleSheet, Linking, Text, View, TouchableOpacity, TextInput, Button, I
 export default function Login() {
   return (
     <View style={styles.container}>
-     
+
       <View style={styles.container1}>
-      <Image
-      style={styles.logo}
-      source = {require('../../../assets/images/icon2.png')}
-      />
-      <Text style={styles.text}>EstoVirtu</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Digite seu Email"       
-      />
-      <TextInput
-        style={styles.input1}
-        placeholder="Digite sua Senha"   
-        keyboardType='digite sua senha'    
-      />
-      <View >
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={styles.botao}>
-        <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
-      </TouchableOpacity>
-      <Text style={styles.link}
-      onPress={() => Linking.openURL('http://google.com')}>
-      já possui conta?
-      </Text>
+        <Image
+          style={styles.logo}
+          source={require('../../../assets/images/icon2.png')}
+        />
+        <Text style={styles.text}>EstoVirtu</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite seu Email"
+        />
+        <TextInput
+          style={styles.input1}
+          placeholder="Digite sua Senha"
+          keyboardType='digite sua senha'
+        />
+        <View >
+          <TouchableOpacity
+            onPress={() => alert('Hello, world!')}
+            style={styles.botao}>
+            <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
+          </TouchableOpacity>
+          <Text style={styles.link}
+            onPress={() => Linking.openURL('http://google.com')}>
+            já possui conta?
+          </Text>
+        </View>
       </View>
-      </View>
-      
+
       <StatusBar style="auto" />
     </View>
   );
@@ -46,64 +46,53 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFB800',
     alignItems: 'center',
     justifyContent: 'center',
-    color:'white'
+    color: 'white'
   },
-  container1:{
-    border:'solid black',
-    height: '90%',
-    width: '90%',
-    backgroundColor:'FFB800',
+  container1: {
+    border: 'solid black',
+    height: '750px',
+    width: '400px',
+    backgroundColor: 'FFB800',
   },
-  text:{
-    marginTop:'0%',
-    fontFamily:'anton',
-    color:'white',
-    fontSize:'175%',
-    marginLeft:'32%',
-    // padding:0
+  text: {
+    color: 'white',
+    fontSize: '30px',
+    textAlign: 'center'
   },
   input: {
-    textAligin:'center',
+    textAligin: 'center',
     margin: 12,
     borderWidth: 1,
-    color:'white',
-    backgroundColor:'black',
-    marginTop:'10%',
-    borderRadius:30
+    color: 'white',
+    backgroundColor: 'black',
+    marginTop: '40px',
+    borderRadius: 30
   },
-   input1: {
-   // height: 80,
-   margin: 12,
-   borderWidth: 1,
-   color:'white',
-   backgroundColor:'black',
-   // fontSize:40,
-   marginTop:'10%',
-   borderRadius:30,
-   },
-   botao:{
+  input1: {
+    margin: 12,
+    borderWidth: 1,
+    color: 'white',
+    backgroundColor: 'black',
+    marginTop: '40px',
     borderRadius: 30,
-    justifyContent:'center',
-    alignItems:'center',
-   backgroundColor:'black',
-   paddingBottom:'5px',
-   marginLeft:'30%',
-   marginRight:'30%',
-//   color:'white',
-//   // marginTop:20,
-//   // fontSize:100
-
-   },
-   logo:{
-      width: '55%',
-      height:'28%',
-      marginLeft:'22%',
-      marginTop:'20%'
   },
-  link:{
-    // color='blue',
-    marginLeft:'35%'
+  botao: {
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    paddingBottom: '5px',
+    marginTop:'50px',
+    marginLeft: '120px',
+    marginRight: '120px',
+  },
+  logo: {
+    width: '250px',
+    height: '200px',
+    marginLeft: '70px',
+    marginTop: '70px'
+  },
+  link: {
+    marginLeft: '150px'
   }
- 
-
 });
