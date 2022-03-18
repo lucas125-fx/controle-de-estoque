@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Login from './src/Pages/Login/';
 import Cadastro from './src/Pages/Cadastro/';
 import Principal from './src/Pages/Principal';
+import Qrcode from './src/Pages/Qrcode'
 import { NavigationContainer } from '@react-navigation/native';
 import{ createBottomTabNavigator }from'@react-navigation/bottom-tabs';
 
@@ -15,6 +16,7 @@ export default function App() {
      <Tab.Screen name="Cadastro"component={Cadastro}/>
      <Tab.Screen name="Login"component={Login}/> 
      <Tab.Screen name="Principal"component={Principal}/>
+     <Tab.Screen name="Qrcode"component={Qrcode}/>
      </Tab.Navigator>
         </NavigationContainer>
   );

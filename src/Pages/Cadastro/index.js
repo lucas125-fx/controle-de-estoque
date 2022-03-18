@@ -57,71 +57,73 @@ const styles = StyleSheet.create({
     color:'white'
   },
   container1:{
-    border:'solid black',
-    height: '90%',
-    width: '90%',
-    backgroundColor:'FFB800',
+    //border:'solid black',
+    height: 90,
+    width: 90,
+   // backgroundColor:'FFB800',
   },
   text:{
-    fontFamily:'anton',
-    color:'white',
-    fontSize:'175%',
-    marginLeft:'32%',
-    // padding:0
+    marginTop: 0,
+    fontFamily: 'normal',
+    color: 'white',
+    marginLeft:-20,
+    marginRight:-110,
+    fontSize:30
   },
   input: {
-   // height: 80,
-   margin: 12,
-   borderWidth: 1,
-   color:'white',
-   backgroundColor:'black',
-   // fontSize:40,
-   marginTop:'10%',
-   borderRadius:30,
+    color: 'white',
+    marginLeft: -150,
+    marginRight:-150,
+    borderWidth: 1,
+    backgroundColor: 'black',
+    marginTop: 10,
+    borderRadius: 30,
   },
   input1: {
- // height: 80,
- margin: 12,
- borderWidth: 1,
- color:'white',
- backgroundColor:'black',
- // fontSize:40,
- marginTop:'10%',
- borderRadius:30,
+    marginTop: 0,
+    marginLeft: -150,
+    marginRight:-150,
+    borderWidth: 1,
+    color: 'white',
+    backgroundColor: 'black',
+    // fontSize:40,
+    marginTop: 30,
+    borderRadius: 30,
+
 },
   input2: {
-  // height: 80,
-  margin: 12,
-  borderWidth: 1,
-  color:'white',
-  backgroundColor:'black',
-  // fontSize:40,
-  marginTop:'10%',
-  borderRadius:30,
-},
-   botao:{
+    marginTop: 0,
+    marginLeft: -150,
+    marginRight:-150,
+    borderWidth: 1,
+    color: 'white',
+    backgroundColor: 'black',
+    // fontSize:40,
+    marginTop: 30,
     borderRadius: 30,
-    justifyContent:'center',
-    alignItems:'center',
-   backgroundColor:'black',
-   paddingBottom:'5px',
-   marginLeft:'30%',
-   marginRight:'30%',
-//   color:'white',
-//   // marginTop:20,
-//   // fontSize:100
+   
+},
+    botao: {
+      borderRadius: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'black',
+      paddingBottom: 5,
+      marginLeft: -30,
+      marginRight: -30,
+      marginTop: 50
    },
-   logo:{
-      width: '55%',
-      height:'28%',
-      marginLeft:'22%',
-      marginTop:'20%'
-
+   logo: {
+    width: 200,
+    height: 200,
+    marginLeft: -85,
+    marginTop: -200
   },
   Link:{
-    padding:'3px',
-    color: 'blue',
-    marginLeft:'35%',
+    
+    color: 'black',
+    marginLeft: -5,
+    marginRight:-10
     
   }
  
