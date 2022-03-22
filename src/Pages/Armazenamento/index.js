@@ -6,6 +6,7 @@ export default function Principal({navigaton}) {
       <TextInput
         style={styles.input}
         placeholder="Pesquisar Produto"
+        placeholderTextColor="#FFF"
       />
       <View style={styles.produtos}>
         <Text style={styles.font}></Text>
@@ -25,11 +26,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFB800',
+    color:'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
   input: {
-    width: 410,
+    width: 385,
     backgroundColor: 'black',
     color: 'white',
     marginTop: 20,
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   produtos: {
-    marginBottom: '20px',
+    marginBottom: 20,
     backgroundColor: 'black',
     padding: 50,
     justifyContent: 'center',
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     flex: 1,
     height:800,
-    width:400,
+    width:385,
   },
   font: {
     fontSize: 15,

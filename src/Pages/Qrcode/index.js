@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
   },
   botao: {
     borderRadius: 30,
-    width: 0,
+    width: 200,
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: "center",
-    marginBottom: 700
+    marginBottom: 500
   }
 });
