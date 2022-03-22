@@ -14,15 +14,18 @@ export default function Cadastro() {
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
         style={styles.input}
-        placeholder="Email"       
+        placeholder="Email"      
+        placeholderTextColor="#FFF" 
       />
       <TextInput
         style={styles.input1}
         placeholder="Senha"      
+        placeholderTextColor="#FFF"
       />
       <TextInput
         style={styles.input2}
-        placeholder="Confirmar senha"             
+        placeholder="Confirmar senha"
+        placeholderTextColor="#FFF"             
       />
       <View >
       <TouchableOpacity
@@ -76,6 +79,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     marginTop: 10,
     borderRadius: 30,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   input1: {
     marginTop: 0,
@@ -87,6 +92,8 @@ const styles = StyleSheet.create({
     // fontSize:40,
     marginTop: 30,
     borderRadius: 30,
+    paddingLeft: 10,
+    paddingRight: 10,
 
 },
   input2: {
@@ -99,6 +106,8 @@ const styles = StyleSheet.create({
     // fontSize:40,
     marginTop: 30,
     borderRadius: 30,
+    paddingLeft: 10,
+    paddingRight: 10,
    
 },
     botao: {

@@ -16,10 +16,13 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="Digite seu Email"
+          placeholderTextColor="#FFF"
         />
         <TextInput
           style={styles.input1}
           placeholder="Digite sua Senha"
+          placeholderTextColor="#FFF"
+
         />
         <View >
           <TouchableOpacity
@@ -58,25 +61,29 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontFamily: 'normal',
     color: 'white',
-    marginLeft:-20,
-    marginRight:-110,
-    fontSize:30
+    marginLeft: -20,
+    marginRight: -110,
+    fontSize: 30
   },
   input: {
     color: 'white',
     marginLeft: -150,
-    marginRight:-150,
+    marginRight: -150,
     borderWidth: 1,
     backgroundColor: 'black',
     marginTop: 30,
     borderRadius: 30,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   input1: {
     marginTop: 0,
     marginLeft: -150,
-    marginRight:-150,
+    marginRight: -150,
     borderWidth: 1,
     color: 'white',
+    paddingLeft: 10,
+    paddingRight: 10,
     backgroundColor: 'black',
     // fontSize:40,
     marginTop: 30,
@@ -91,7 +98,6 @@ const styles = StyleSheet.create({
     marginLeft: -30,
     marginRight: -30,
     marginTop: 50
-
   },
   logo: {
     width: 200,

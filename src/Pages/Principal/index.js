@@ -6,6 +6,7 @@ export default function Principal({navigaton}) {
       <TextInput
         style={styles.input}
         placeholder="Pesquisar Produto"
+        placeholderTextColor="#FFF"
       />
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
@@ -34,7 +35,9 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 20,
     marginBottom: 10,
-    borderRadius: 10
+    borderRadius: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   produtos: {
     marginBottom: 10,
