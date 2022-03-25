@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     marginBottom: 250
   },
   botao: {
-    borderRadius: 30,
-    width: 250,
+    borderRadius: 40,
+    width: 220,
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: "center",
-    marginBottom: 50
+    marginBottom: 420,
   }
 });
