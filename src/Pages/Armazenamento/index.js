@@ -36,18 +36,20 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 20,
     marginBottom: 10,
-    borderRadius: 10
+    borderRadius: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   produtos: {
-    marginBottom: 20,
+    marginBottom: 10,
     backgroundColor: 'black',
-    padding: 50,
+    padding: 60,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
     flex: 1,
     height:800,
-    width:385,
+    width:385
   },
   font: {
     fontSize: 15,
