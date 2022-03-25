@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
+import Segurança from './src/Pages/Segurança';
 import Login from './src/Pages/Login/';
 import Cadastro from './src/Pages/Cadastro/';
 import Principal from './src/Pages/Principal';
@@ -18,9 +19,11 @@ export default function App() {
      <Tab.Screen name="Principal"component={Principal}/>
      <Tab.Screen name="Qrcode"component={Qrcode}/>
      <Tab.Screen name="Armazenamento"component={Armazenamento}/>
+     <Tab.Screen name="Segurança"component={Segurança}/>
      
      </Tab.Navigator>
         </NavigationContainer>
+       
   );
 }
 
