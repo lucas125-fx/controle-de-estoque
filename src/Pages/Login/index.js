@@ -22,6 +22,7 @@ export default function Login() {
           style={styles.input1}
           placeholder="Digite sua Senha"
           placeholderTextColor="#FFF"
+          type='password'
 
         />
         <View >
@@ -31,7 +32,7 @@ export default function Login() {
             <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
           </TouchableOpacity>
           <Text style={styles.link}
-            onPress={() => Linking.openURL('http://google.com')}>
+            onPress={() => Linking.openURL('../Cadastro/index.js')}>
             já possui conta?
       </Text>
         </View>

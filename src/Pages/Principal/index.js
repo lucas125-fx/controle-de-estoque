@@ -1,6 +1,11 @@
-import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, TouchableHighlight } from 'react-native';
 
-export default function Principal({navigaton}) {
+
+export default function Principal({navigaton}){
+  const [count, setCount] = useState(0);
+  const onPress = () => setCount(count + 1);
+  const onPress1 = () => setCount(count - 1);
   return (
     <View style={styles.container}>
       <TextInput
@@ -10,6 +15,21 @@ export default function Principal({navigaton}) {
       />
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
+        
+        <TouchableHighlight onPress={onPress}>
+        <View style={styles.button}>
+          <Text style={{color:'white'}}>+</Text>
+        </View>
+      </TouchableHighlight>
+        <Text style={styles.countText}>
+          {count || null}
+        </Text>
+
+        <TouchableHighlight onPress={onPress1}>
+        <View style={styles.button1}>
+          <Text style={{color:'white'}}>+</Text>
+        </View>
+      </TouchableHighlight>
       </View>
       <View>
         <TouchableOpacity
@@ -65,5 +85,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: "center",
     marginBottom: 420,
+  },
+  button: {
+    // alignItems: "center",
+    backgroundColor: "green",
+    padding: 10,
+    marginLeft:100
+  },
+  button1: {
+    // alignItems: "center",
+    backgroundColor: "red",
+    padding: 10,
+    marginRight:100
+  },
+  countText: {
+    color: "#fff"
   }
 });
