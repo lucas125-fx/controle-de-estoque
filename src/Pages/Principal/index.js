@@ -16,6 +16,7 @@ export default function Principal({navigaton}){
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
         
+<<<<<<< HEAD
       
           <View style={styles.linha}>
         <TouchableHighlight onPress={onPress1}>
@@ -24,16 +25,31 @@ export default function Principal({navigaton}){
         </View>
        </TouchableHighlight>
 
+=======
+        <TouchableHighlight onPress={onPress}>
+        <View style={styles.button}>
+          <Text style={{color:'white'}}>+</Text>
+        </View>
+      </TouchableHighlight>
+>>>>>>> 4be3dfba9030a3810550c399da69f4cd7ed4f0c0
         <Text style={styles.countText}>
           {count || null}
         </Text>
 
+<<<<<<< HEAD
         <TouchableHighlight onPress={onPress} >
         <View style={styles.button}>
           <Text style={{color:'white'}}>+</Text>
         </View>
       </TouchableHighlight>
         </View>
+=======
+        <TouchableHighlight onPress={onPress1}>
+        <View style={styles.button1}>
+          <Text style={{color:'white'}}>+</Text>
+        </View>
+      </TouchableHighlight>
+>>>>>>> 4be3dfba9030a3810550c399da69f4cd7ed4f0c0
       </View>
       <View>
         <TouchableOpacity
@@ -91,15 +107,23 @@ const styles = StyleSheet.create({
     marginBottom: 420,
   },
   button: {
+<<<<<<< HEAD
     alignItems: "center",
     backgroundColor: "green",
     padding: 10,
     marginLeft:30
+=======
+    // alignItems: "center",
+    backgroundColor: "green",
+    padding: 10,
+    marginLeft:100
+>>>>>>> 4be3dfba9030a3810550c399da69f4cd7ed4f0c0
   },
   button1: {
     // alignItems: "center",
     backgroundColor: "red",
     padding: 10,
+<<<<<<< HEAD
     marginRight:30
   },
   countText: {
@@ -110,5 +134,11 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     backgroundColor:'gray',
     whidth:0
+=======
+    marginRight:100
+  },
+  countText: {
+    color: "#fff"
+>>>>>>> 4be3dfba9030a3810550c399da69f4cd7ed4f0c0
   }
 });
