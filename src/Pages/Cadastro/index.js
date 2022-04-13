@@ -21,11 +21,13 @@ export default function Cadastro() {
         style={styles.input1}
         placeholder="Senha"      
         placeholderTextColor="#FFF"
+        secureTextEntry={true}
       />
       <TextInput
         style={styles.input2}
         placeholder="Confirmar senha"
-        placeholderTextColor="#FFF"             
+        placeholderTextColor="#FFF" 
+        secureTextEntry={true}            
       />
       <View >
       <TouchableOpacity

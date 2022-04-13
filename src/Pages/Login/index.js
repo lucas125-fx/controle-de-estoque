@@ -22,7 +22,7 @@ export default function Login() {
           style={styles.input1}
           placeholder="Digite sua Senha"
           placeholderTextColor="#FFF"
-          type='password'
+          secureTextEntry={true}
 
         />
         <View >
