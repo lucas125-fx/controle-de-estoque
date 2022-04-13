@@ -7,6 +7,7 @@ import Qrcode from './src/Pages/Qrcode'
 import { NavigationContainer } from '@react-navigation/native';
 import{ createBottomTabNavigator }from'@react-navigation/bottom-tabs';
 import Armazenamento from './src/Pages/Armazenamento';
+import CadastroProdutos from './src/Pages/CadastroProdutos/'
 
 const Tab= createBottomTabNavigator();
 
@@ -19,7 +20,7 @@ export default function App() {
      <Tab.Screen name="Principal"component={Principal}/>
      <Tab.Screen name="Qrcode"component={Qrcode}/>
      <Tab.Screen name="Armazenamento"component={Armazenamento}/>
-     <Tab.Screen name="Segurança"component={Segurança}/>
+     <Tab.Screen name="cadastro de produtos"component={CadastroProdutos}/>
      
      </Tab.Navigator>
         </NavigationContainer>
