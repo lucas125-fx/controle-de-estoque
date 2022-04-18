@@ -7,13 +7,14 @@ export default function CadastroProdutos() {
     <View style={styles.container}>
      
       <View style={styles.container1}>
-      <Image
-      style={styles.logo}
-      source={require('../../../assets/images/icon2.png')}
-      />
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
         style={styles.input}
+        placeholder="imagem"      
+        placeholderTextColor="#FFF" 
+      />
+      <TextInput
+        style={styles.input1}
         placeholder="Nome"      
         placeholderTextColor="#FFF" 
       />
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     //border:'solid black',
     height: 90,
     width: 90,
-   // backgroundColor:'FFB800',
+  marginTop:-450
   },
   text:{
     marginTop: 0,
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     marginLeft: -85,
-    marginTop: -200
+    marginTop: -250
   },
   Link:{
     

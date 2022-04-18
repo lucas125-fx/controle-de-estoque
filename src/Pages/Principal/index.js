@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     width: 385,
     backgroundColor: 'black',
     color: 'white',
-    marginTop: 20,
+    marginTop: 160,
     marginBottom: 10,
     borderRadius: 10,
     paddingLeft: 10,
@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
   produtos: {
     marginBottom: 10,
     backgroundColor: 'black',
-    padding: 60,
+    padding: 30,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    flex: 1,
-    height:800,
-    width:385
+    // flex: 1,
+    height:200,
+    width:400
   },
   font: {
     fontSize: 15,
@@ -97,18 +97,18 @@ const styles = StyleSheet.create({
     marginLeft:30
   },
   button1: {
-    // alignItems: "center",
+     alignItems: "center",
     backgroundColor: "red",
     padding: 10,
     marginRight:30
   },
   countText: {
-    color: "#fff",
+    color: "black",
     fontSize:25
   },
   linha:{
     flexDirection:'row',
-    backgroundColor:'gray',
-    whidth:0
+    backgroundColor:'white',
+    marginBottom:15
   }
 });
