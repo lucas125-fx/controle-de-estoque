@@ -22,8 +22,8 @@ export default function Login() {
           style={styles.input1}
           placeholder="Digite sua Senha"
           placeholderTextColor="#FFF"
-          // secureTextEntry={true}
-
+          secureTextEntry={true}
+          password={true}
         />
         <View >
           <TouchableOpacity

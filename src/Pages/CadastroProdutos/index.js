@@ -55,7 +55,7 @@ export default function CadastroProdutos() {
 
         style={styles.botao}>
 
-        <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
+        <Text style={{ fontSize: 20, color: '#fff', }}>Cadastrar</Text>
 
       </TouchableOpacity>
       <Text style={styles.Link}
