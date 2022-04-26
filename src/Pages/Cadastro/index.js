@@ -1,8 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, TouchableOpacity, Linking, Text, View, TextInput,Button, Image } from 'react-native';
+import React, {useState, useEffect} from "react"
+import {  Safeareaview ,StyleSheet, TouchableOpacity, Linking, Text, View, TextInput , Image } from 'react-native';
+import database from '../../Config/firebaseconfig';
+import Login from '../Login';
 
+export default function Cadastro({navigation}) {
+// const [ estoque, setEstoque ] = useState ([])
 
-export default function Cadastro() {
+// useEffect (() =>{
+//   database.collection("Estoque").onSnapshot((query)=>{
+//     const list = []
+//     query.forEach((doc)=>{
+//       list.push({...doc.data(), id: doc.id })
+//     })
+//     setEstoque(list)
+//   })
+// }, [])
+
   return (
     <View style={styles.container}>
      
@@ -32,7 +46,8 @@ export default function Cadastro() {
       <View >
       <TouchableOpacity
 
-        onPress={() => alert('Conta cadastrada!!')}
+        onPress={() => (navigation.navigate(Login))}
+        
 
         style={styles.botao}>
 
@@ -40,8 +55,8 @@ export default function Cadastro() {
 
       </TouchableOpacity>
       <Text style={styles.Link}
-      onPress={() => Linking.openURL('http://google.com')}>
-  já possui conta?
+      onPress={() => (navigation.navigate('Login'))}>
+  Já possui conta?
 </Text>
       </View>
       </View>

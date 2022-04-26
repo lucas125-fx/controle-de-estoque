@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 
-export default function Principal({navigaton}){
+export default function Principal({navigation}){
   const [count, setCount] = useState(0);
   const onPress = () => setCount(count + 1);
   const onPress1 = () => setCount(count - 1);
@@ -37,7 +37,7 @@ export default function Principal({navigaton}){
       </View>
       <View>
         <TouchableOpacity
-          onPress={() => alert('Erro')}
+          onPress={() => (navigation.navigate('Qrcode'))}
           style={styles.botao}>
           <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre seu produto</Text>
         </TouchableOpacity>

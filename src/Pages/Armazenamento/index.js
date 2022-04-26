@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
 
-export default function Principal({navigaton}) {
+export default function Principal({navigation}) {
   return (
     <View style={styles.container}>
       <TextInput
@@ -13,8 +13,8 @@ export default function Principal({navigaton}) {
       </View>
       <View>
         <TouchableOpacity
-          onPress={() => alert('Erro')}
-          style={styles.botao}>
+      onPress={() => (navigation.navigate('Cadastrodeprodutos'))}
+      style={styles.botao}>
           <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre seu produto</Text>
         </TouchableOpacity>
       </View>

@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, TouchableOpacity, Linking, Text, View, TextInput,Button, Image } from 'react-native';
 
 
-export default function CadastroProdutos() {
+export default function CadastroProdutos({navigation}) {
   return (
     <View style={styles.container}>
      
@@ -50,18 +50,12 @@ export default function CadastroProdutos() {
       />
       <View >
       <TouchableOpacity
-
-        onPress={() => alert('Conta cadastrada!!')}
-
+      onPress={() => (navigation.navigate('Armazenamento'))}
         style={styles.botao}>
 
         <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
 
       </TouchableOpacity>
-      <Text style={styles.Link}
-      onPress={() => Linking.openURL('http://google.com')}>
-  já possui conta?
-</Text>
       </View>
       </View>
       

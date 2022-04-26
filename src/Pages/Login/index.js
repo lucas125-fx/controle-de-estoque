@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Linking, Text, View, TouchableOpacity, TextInput, Button, Image } from 'react-native';
 
 
-export default function Login() {
+export default function Login({navigation}) {
   return (
     <View style={styles.container}>
 
@@ -27,13 +27,13 @@ export default function Login() {
         />
         <View >
           <TouchableOpacity
-            onPress={() => alert('Hello, world!')}
+            onPress={() => (navigation.navigate('Principal'))}
             style={styles.botao}>
             <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
           </TouchableOpacity>
           <Text style={styles.link}
-            onPress={() => Linking.openURL('../Cadastro/index.js')}>
-            já possui conta?
+            onPress={() => (navigation.navigate('Cadastro'))}>
+            Já possui conta?
       </Text>
         </View>
       </View>
