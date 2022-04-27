@@ -13,7 +13,7 @@ export default function Principal({navigation}) {
       </View>
       <View>
         <TouchableOpacity
-      onPress={() => (navigation.navigate('Cadastrodeprodutos'))}
+      onPress={() => (navigation.navigate('Cadastro De Produtos'))}
       style={styles.botao}>
           <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre seu produto</Text>
         </TouchableOpacity>

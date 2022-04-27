@@ -10,7 +10,7 @@ export default function CadastroProdutos({navigation}) {
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
         style={styles.input}
-        placeholder="imagem"      
+        placeholder="Imagem"      
         placeholderTextColor="#FFF" 
       />
       <TextInput
@@ -25,17 +25,12 @@ export default function CadastroProdutos({navigation}) {
       />
       <TextInput
         style={styles.input2}
-        placeholder="Local"
+        placeholder="QR Code"
         placeholderTextColor="#FFF"             
       />
       <TextInput
         style={styles.input2}
-        placeholder="QR code"
-        placeholderTextColor="#FFF"             
-      />
-      <TextInput
-        style={styles.input2}
-        placeholder="Codigo Empresa"
+        placeholder="Código Empresa"
         placeholderTextColor="#FFF"             
       />
       <TextInput
@@ -50,10 +45,10 @@ export default function CadastroProdutos({navigation}) {
       />
       <View >
       <TouchableOpacity
-      onPress={() => (navigation.navigate('Armazenamento'))}
+      onPress={() => (navigation.navigate('Principal'))}
         style={styles.botao}>
 
-        <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
+        <Text style={{ fontSize: 20, color: '#fff', }}>Cadastrar</Text>
 
       </TouchableOpacity>
       </View>

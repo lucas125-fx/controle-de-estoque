@@ -37,7 +37,7 @@ export default function Principal({navigation}){
       </View>
       <View>
         <TouchableOpacity
-          onPress={() => (navigation.navigate('Qrcode'))}
+          onPress={() => (navigation.navigate('Cadastro De Produtos'))}
           style={styles.botao}>
           <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre seu produto</Text>
         </TouchableOpacity>
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     marginRight: 50,
     marginLeft:-220,
     marginTop:-100,
-    marginBottom: 250
+    marginBottom: 10
   },
   botao: {
     borderRadius: 40,
@@ -109,6 +109,6 @@ const styles = StyleSheet.create({
   linha:{
     flexDirection:'row',
     backgroundColor:'white',
-    marginBottom:15
+    marginTop:20
   }
 });
