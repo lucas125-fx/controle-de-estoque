@@ -1,68 +1,82 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState, useEffect} from "react"
-import {  Safeareaview ,StyleSheet, TouchableOpacity, Linking, Text, View, TextInput , Image } from 'react-native';
-import database from '../../Config/firebaseconfig';
+import { addDoc, collection, getDocs } from 'firebase/firestore';
+import React, { useState, useEffect } from "react"
+import { Safeareaview, StyleSheet, TouchableOpacity, Linking, Text, View, TextInput, Image } from 'react-native';
+import db from '../../Config/firebase';
 import Login from '../Login';
 
-export default function Cadastro({navigation}) {
-// const [ estoque, setEstoque ] = useState ([])
+export default function Cadastro({ navigation }) {
 
-// useEffect (() =>{
-//   database.collection("Estoque").onSnapshot((query)=>{
-//     const list = []
-//     query.forEach((doc)=>{
-//       list.push({...doc.data(), id: doc.id })
-//     })
-//     setEstoque(list)
-//   })
-// }, [])
+  const [email, onChangeEmail] = useState("");
+  const [password, onChangePassword] = useState('');
+
+  const request = async () => {
+    const querySnapshot = await getDocs(
+      collection(db, "Estoque")
+    );
+
+    querySnapshot.forEach(
+      (doc) => {
+        console.log(doc.data());
+      }
+    );
+  }
+  const insertData = async () => {
+    const docRef = await addDoc(collection(db, "Estoque"), {
+      email: email,
+      senha: password
+    });
+    console.log("Document written with ID: ", docRef.id);
+  }
+
+  useEffect(() => {
+    request();
+  }, [])
+
+  useEffect(() => {
+    console.log(email)
+  }, [email])
 
   return (
     <View style={styles.container}>
-     
+
       <View style={styles.container1}>
-      <Image
-      style={styles.logo}
-      source={require('../../../assets/images/icon2.png')}
-      />
-      <Text style={styles.text}>EstoVirtu</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"      
-        placeholderTextColor="#FFF" 
-      />
-      <TextInput
-        style={styles.input1}
-        placeholder="Senha"      
-        placeholderTextColor="#FFF"
-        password={true}
-        secureTextEntry={true} 
-      />
-      <TextInput
-        style={styles.input2}
-        placeholder="Confirmar senha"
-        placeholderTextColor="#FFF" 
-        secureTextEntry={true} 
-        password={true}          
-      />
-      <View >
-      <TouchableOpacity
+        <Image
+          style={styles.logo}
+          source={require('../../../assets/images/icon2.png')}
+        />
+        <Text style={styles.text}>EstoVirtu</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Email:"
+          placeholderTextColor="#FFF"
+          onChangeText={onChangeEmail}
+        />
+        <TextInput
+          style={styles.input1}
+          placeholder="Senha:"
+          placeholderTextColor="#FFF"
+          password={true}
+          secureTextEntry={true}
+          onChangeText={onChangePassword}
+          />
+        <View >
+          <TouchableOpacity
 
-        onPress={() => (navigation.navigate(Login))}
-        
+            onPress={() => (insertData())}
 
-        style={styles.botao}>
+            style={styles.botao}>
 
-        <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
+            <Text style={{ fontSize: 20, color: '#fff', }}>Cadastrar</Text>
 
-      </TouchableOpacity>
-      <Text style={styles.Link}
-      onPress={() => (navigation.navigate('Login'))}>
-  Já possui conta?
-</Text>
+          </TouchableOpacity>
+          <Text style={styles.Link}
+            onPress={() => (navigation.navigate('Login'))}>
+            Já possui conta?
+          </Text>
+        </View>
       </View>
-      </View>
-      
+
       <StatusBar style="auto" />
     </View>
   );
@@ -74,29 +88,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFB800',
     alignItems: 'center',
     justifyContent: 'center',
-    color:'white'
+    color: 'white'
   },
-  container1:{
+  container1: {
     //border:'solid black',
     height: 90,
     width: 90,
-   // backgroundColor:'FFB800',
+    // backgroundColor:'FFB800',
   },
-  text:{
+  text: {
     marginTop: 0,
     fontFamily: 'normal',
     color: 'white',
-    marginLeft:-20,
-    marginRight:-110,
-    fontSize:30
+    marginLeft: -20,
+    marginRight: -110,
+    fontSize: 30
   },
   input: {
     color: 'white',
     marginLeft: -150,
-    marginRight:-150,
+    marginRight: -150,
     borderWidth: 1,
     backgroundColor: 'black',
-    marginTop: 10,
+    marginTop: 30,
     borderRadius: 30,
     paddingLeft: 10,
     paddingRight: 10,
@@ -104,7 +118,7 @@ const styles = StyleSheet.create({
   input1: {
     marginTop: 0,
     marginLeft: -150,
-    marginRight:-150,
+    marginRight: -150,
     borderWidth: 1,
     color: 'white',
     backgroundColor: 'black',
@@ -114,11 +128,11 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
 
-},
+  },
   input2: {
     marginTop: 0,
     marginLeft: -150,
-    marginRight:-150,
+    marginRight: -150,
     borderWidth: 1,
     color: 'white',
     backgroundColor: 'black',
@@ -127,31 +141,31 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingLeft: 10,
     paddingRight: 10,
-   
-},
-    botao: {
-      borderRadius: 30,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'black',
-      paddingBottom: 5,
-      marginLeft: -30,
-      marginRight: -30,
-      marginTop: 50
-   },
-   logo: {
+
+  },
+  botao: {
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    paddingBottom: 5,
+    marginLeft: -30,
+    marginRight: -30,
+    marginTop: 50
+  },
+  logo: {
     width: 200,
     height: 200,
     marginLeft: -85,
     marginTop: -200
   },
-  Link:{
-    
+  Link: {
+
     color: 'black',
     marginLeft: -5,
-    marginRight:-10
-    
+    marginRight: -10
+
   }
- 
+
 
 });

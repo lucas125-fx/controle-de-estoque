@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Linking, Text, View, TouchableOpacity, TextInput, Button, Image } from 'react-native';
+import { ActivityIndicator, StyleSheet, Linking, Text, View, TouchableOpacity, TextInput, Button, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import db from '../../Config/firebase';
+import { collection, doc, getDocs } from 'firebase/firestore';
+import { async } from '@firebase/util';
 
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
+
+  const [email, onChangeEmail] = useState("");
+  const [password, onChangePassword] = useState('');
+
+  const request = async () => {
+    const querySnapshot = await getDocs(
+      collection(db, "Estoque")
+    );
+
+    querySnapshot.forEach(
+      (doc) => {
+        console.log(doc.data());
+      }
+    );
+  }
+
+  useEffect(() => {
+    request();
+  }, [])
+
+  useEffect(() => {
+    console.log(email)
+  }, [email])
+
   return (
     <View style={styles.container}>
 
@@ -13,18 +41,24 @@ export default function Login({navigation}) {
           source={require('../../../assets/images/icon2.png')}
         />
         <Text style={styles.text}>EstoVirtu</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu Email"
-          placeholderTextColor="#FFF"
-        />
-        <TextInput
-          style={styles.input1}
-          placeholder="Digite sua Senha"
-          placeholderTextColor="#FFF"
-          secureTextEntry={true}
-          password={true}
-        />
+        <SafeAreaView>
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeEmail}
+            value={email}
+            placeholder="Email:"
+            placeholderTextColor="#FFF"
+          />
+          <TextInput
+            style={styles.input1}
+            onChangeText={onChangePassword}
+            value={password}
+            secureTextEntry={true}
+            password={true}
+            placeholder="Senha:"
+            placeholderTextColor="#FFF"
+          />
+        </SafeAreaView>
         <View >
           <TouchableOpacity
             onPress={() => (navigation.navigate('Principal'))}
@@ -34,7 +68,7 @@ export default function Login({navigation}) {
           <Text style={styles.link}
             onPress={() => (navigation.navigate('Cadastro'))}>
             Já possui conta?
-      </Text>
+          </Text>
         </View>
       </View>
 
