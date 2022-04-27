@@ -16,11 +16,7 @@
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
     "@react-navigation/stack": "^6.1.1",
-<<<<<<< HEAD
     "@types/react-native": "^0.67.6",
-=======
-    "body-parser": "^1.20.0",
->>>>>>> dd71750c7026439ecc480bb9030078e6da0068c9
     "expo": "~44.0.0",
     "expo-barcode-scanner": "~11.2.0",
     "expo-camera": "~12.1.2",
@@ -28,12 +24,7 @@
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.6",
-<<<<<<< HEAD
     "firebase": "^9.6.11",
-=======
-    "express": "^4.17.3",
-    "mysql": "^2.18.1",
->>>>>>> dd71750c7026439ecc480bb9030078e6da0068c9
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
