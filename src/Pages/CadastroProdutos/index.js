@@ -9,38 +9,33 @@ export default function CadastroProdutos({navigation}) {
       <View style={styles.container1}>
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
-        style={styles.input}
-        placeholder="Imagem"      
+        style={styles.input1}
+        placeholder="Nome Do Produto:"      
         placeholderTextColor="#FFF" 
       />
       <TextInput
         style={styles.input1}
-        placeholder="Nome"      
-        placeholderTextColor="#FFF" 
-      />
-      <TextInput
-        style={styles.input1}
-        placeholder="Tipo"      
+        placeholder="Tipo Do Produto:"      
         placeholderTextColor="#FFF"
       />
       <TextInput
         style={styles.input2}
-        placeholder="QR Code"
+        placeholder="QR Code:"
         placeholderTextColor="#FFF"             
       />
       <TextInput
         style={styles.input2}
-        placeholder="Código Empresa"
+        placeholder="Código Empresa:"
         placeholderTextColor="#FFF"             
       />
       <TextInput
         style={styles.input2}
-        placeholder="Preço"
+        placeholder="Preço:"
         placeholderTextColor="#FFF"             
       />
       <TextInput
         style={styles.input2}
-        placeholder="Quantidade"
+        placeholder="Quantidade:"
         placeholderTextColor="#FFF"             
       />
       <View >

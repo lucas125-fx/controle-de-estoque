@@ -15,31 +15,17 @@ export default function Principal({navigation}){
       />
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
-        
-      
-          <View style={styles.linha}>
-        <TouchableHighlight onPress={onPress1}>
-        <View style={styles.button1}>
-          <Text style={{color:'white'}}>-</Text>
-        </View>
-       </TouchableHighlight>
-
-        <Text style={styles.countText}>
-          {count || null}
-        </Text>
-
-        <TouchableHighlight onPress={onPress} >
-        <View style={styles.button}>
-          <Text style={{color:'white'}}>+</Text>
-        </View>
-      </TouchableHighlight>
-        </View>
       </View>
       <View>
         <TouchableOpacity
           onPress={() => (navigation.navigate('Cadastro De Produtos'))}
           style={styles.botao}>
-          <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre seu produto</Text>
+          <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre Seu Produto</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => (navigation.navigate('Qrcode'))}
+          style={styles.botao2}>
+          <Text style={{ fontSize: 20, color: '#fff', }}>Ler Qr Code</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -88,7 +74,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: "center",
-    marginBottom: 420,
+    marginBottom: 10,
+  },
+  botao2: {
+    borderRadius: 40,
+    width: 220,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: "center",
+   marginBottom: 200,
   },
   button: {
     alignItems: "center",
