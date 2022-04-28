@@ -63,7 +63,7 @@ export default function Cadastro({ navigation }) {
         <View >
           <TouchableOpacity
 
-            onPress={() => (insertData())}
+            onPress={() => (insertData(),alert('Conta cadastrada com sucesso!!'),navigation.navigate('Login'))}
 
             style={styles.botao}>
 

@@ -15,12 +15,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator useLegacyImplementation={true} >
-     <Tab.Screen name="Principal"component={Principal}/>
-     <Tab.Screen name="Login"component={Login}/> 
+     <Tab.Screen name="Login"component={Login}/>
      <Tab.Screen name="Cadastro"component={Cadastro}/>
-     <Tab.Screen name="Qrcode"component={Qrcode}/>
+     <Tab.Screen name="Principal"component={Principal}/>
      <Tab.Screen name="Cadastro De Produtos"component={CadastroProdutos}/>
-     
+     <Tab.Screen name="Qrcode"component={Qrcode}/>
      </Tab.Navigator>
         </NavigationContainer>
        

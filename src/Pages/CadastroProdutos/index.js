@@ -1,46 +1,81 @@
 import { StatusBar } from 'expo-status-bar';
+import { addDoc, collection, getDocs } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import { StyleSheet, TouchableOpacity, Linking, Text, View, TextInput,Button, Image } from 'react-native';
+import db from '../../Config/firebase';
 
 
 export default function CadastroProdutos({navigation}) {
+  
+  const [nome, onChangeNome] = useState("");
+  const [tipo, onChangeTipo] = useState('');
+  const [preco, onChangePreco] = useState('');
+  const [quantidade, onChangeQuantidade] = useState('');
+
+  const request = async () => {
+    const querySnapshot = await getDocs(
+      collection(db, "Produtos")
+    );
+
+    querySnapshot.forEach(
+      (doc) => {
+        console.log(doc.data());
+      }
+    );
+  }
+  const insertData = async () => {
+    const docRef = await addDoc(collection(db, "Produtos"), {
+      nome: nome,
+      tipo: tipo,
+      preco: preco,
+      quantidade: quantidade
+    });
+    console.log("Document written with ID: ", docRef.id);
+  }
+
+  useEffect(() => {
+    request();
+  }, [])
+
+  useEffect(() => {
+    console.log(nome)
+  }, [nome])
   return (
     <View style={styles.container}>
      
       <View style={styles.container1}>
+      <Image
+          style={styles.logo}
+          source={require('../../../assets/images/icon2.png')}
+        />
       <Text style={styles.text}>EstoVirtu</Text>
       <TextInput
         style={styles.input1}
         placeholder="Nome Do Produto:"      
-        placeholderTextColor="#FFF" 
+        placeholderTextColor="#FFF"
+        onChangeText={onChangeNome}
       />
       <TextInput
         style={styles.input1}
         placeholder="Tipo Do Produto:"      
         placeholderTextColor="#FFF"
-      />
-      <TextInput
-        style={styles.input2}
-        placeholder="QR Code:"
-        placeholderTextColor="#FFF"             
-      />
-      <TextInput
-        style={styles.input2}
-        placeholder="Código Empresa:"
-        placeholderTextColor="#FFF"             
+        onChangeText={onChangeTipo}
       />
       <TextInput
         style={styles.input2}
         placeholder="Preço:"
         placeholderTextColor="#FFF"             
+        onChangeText={onChangePreco}
       />
       <TextInput
         style={styles.input2}
         placeholder="Quantidade:"
-        placeholderTextColor="#FFF"             
+        placeholderTextColor="#FFF" 
+        onChangeText={onChangeQuantidade}            
       />
       <View >
       <TouchableOpacity
-      onPress={() => (navigation.navigate('Principal'))}
+      onPress={() => (insertData(),alert('Produto cadastrado com sucesso!!'),navigation.navigate('Principal'))}
         style={styles.botao}>
 
         <Text style={{ fontSize: 20, color: '#fff', }}>Cadastrar</Text>
@@ -67,7 +102,7 @@ const styles = StyleSheet.create({
     //border:'solid black',
     height: 90,
     width: 90,
-  marginTop:-450
+  marginBottom:40
   },
   text:{
     marginTop: 0,
