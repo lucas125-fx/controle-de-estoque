@@ -16,11 +16,11 @@ export default function Principal({navigation}){
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
       </View>
-      <View>
+      <View style={styles.linha}>
         <TouchableOpacity
           onPress={() => (navigation.navigate('Cadastro De Produtos'))}
           style={styles.botao}>
-          <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre Seu Produto</Text>
+          <Text style={{ fontSize: 20, color: '#fff',  }}>Cadastre Seu Produto</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => (navigation.navigate('Qrcode'))}
@@ -70,15 +70,15 @@ const styles = StyleSheet.create({
   },
   botao: {
     borderRadius: 40,
-    width: 220,
+    width: 200,
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: "center",
-    marginBottom: 10,
+   marginBottom: 200,
   },
   botao2: {
     borderRadius: 40,
-    width: 220,
+    width: 200,
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: "center",
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     marginLeft:30
   },
   button1: {
-     alignItems: "center",
+    alignItems: "center",
     backgroundColor: "red",
     padding: 10,
     marginRight:30
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
   },
   linha:{
     flexDirection:'row',
-    backgroundColor:'white',
     marginTop:20
   }
 });
