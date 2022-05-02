@@ -9,7 +9,7 @@ export default function DashboardRoutes(){
     return (
       
         <Tab.Navigator useLegacyImplementation={true} >
-          <Tab.Screen name="Principal"component={Principal}/>
+          <Tab.Screen name="Principal"component={Principal} options={{headerShown:false}}/>
           <Tab.Screen name="Cadastro De Produtos"component={CadastroProdutos}/>
           <Tab.Screen name="Qrcode"component={Qrcode}/> 
         </Tab.Navigator>
