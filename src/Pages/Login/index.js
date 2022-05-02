@@ -61,7 +61,7 @@ export default function Login({ navigation }) {
         </SafeAreaView>
         <View >
           <TouchableOpacity
-            onPress={() => (navigation.navigate('Principal'))}
+            onPress={() => (navigation.navigate('DashboardRoutes'))}
             style={styles.botao}>
             <Text style={{ fontSize: 20, color: '#fff', }}>Entrar</Text>
           </TouchableOpacity>

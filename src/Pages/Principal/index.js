@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import db from '../../Config/firebase';
+
+
+const listar = async ()=>{
+  const q = query(collection(db, "Produtos"), where("nome", "==", true));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+  
+} 
 
 
 export default function Principal({navigation}){
-  const [count, setCount] = useState(0);
-  const onPress = () => setCount(count + 1);
-  const onPress1 = () => setCount(count - 1);
+ 
   return (
     <View style={styles.container}>
       <TextInput
