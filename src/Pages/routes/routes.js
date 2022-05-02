@@ -13,7 +13,7 @@ export default function Routes() {
         <Stack.Navigator useLegacyImplementation={true} >
           <Stack.Screen name="Login"component={Login}/>
           <Stack.Screen name="Cadastro"component={Cadastro}/>
-          <Stack.Screen name="DashboardRoutes"component={DashboardRoutes} options={{title:'Principal',}}/>
+          <Stack.Screen name="DashboardRoutes"component={DashboardRoutes} options={{headerShown:false}}/>
         </Stack.Navigator> 
          
     );

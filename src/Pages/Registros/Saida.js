@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import db from '../../Config/firebase';
 
 
-export default function RegistroSaida({navigaton}){
-  const [count, setCount] = useState(0);
-  const onPress = () => setCount(count + 1);
-  const onPress1 = () => setCount(count - 1);
+const listar = async ()=>{
+  const q = query(collection(db, "Produtos"), where("nome", "==", true));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+  
+} 
+
+
+export default function Saida({navigation}){
+ 
   return (
     <View style={styles.container}>
       <TextInput
@@ -13,33 +24,20 @@ export default function RegistroSaida({navigaton}){
         placeholder="Pesquisar Produto"
         placeholderTextColor="#FFF"
       />
+        <Text style={styles.font1}>Lista de Produtos Vendidos</Text>
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
-        
-      
-          <View style={styles.linha}>
-        <TouchableHighlight onPress={onPress1}>
-        <View style={styles.button1}>
-          <Text style={{color:'white'}}>-</Text>
-        </View>
-       </TouchableHighlight>
-
-        <Text style={styles.countText}>
-          {count || null}
-        </Text>
-
-        <TouchableHighlight onPress={onPress} >
-        <View style={styles.button}>
-          <Text style={{color:'white'}}>+</Text>
-        </View>
-      </TouchableHighlight>
-        </View>
       </View>
-      <View>
+      <View style={styles.linha}>
         <TouchableOpacity
-          onPress={() => alert('Erro')}
+          onPress={() => (navigation.navigate('Cadastro De Produtos'))}
           style={styles.botao}>
-          <Text style={{ fontSize: 20, color: '#fff', }}>Cadastre seu produto</Text>
+          <Text style={{ fontSize: 20, color: '#fff',  }}>Cadastre Seu Produto</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => (navigation.navigate('Qrcode'))}
+          style={styles.botao2}>
+          <Text style={{ fontSize: 20, color: '#fff', }}>Ler Qr Code</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -57,7 +55,7 @@ const styles = StyleSheet.create({
     width: 385,
     backgroundColor: 'black',
     color: 'white',
-    marginTop: 160,
+    marginTop: 0,
     marginBottom: 10,
     borderRadius: 10,
     paddingLeft: 10,
@@ -70,7 +68,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    // flex: 1,
     height:200,
     width:400
   },
@@ -80,15 +77,31 @@ const styles = StyleSheet.create({
     marginRight: 50,
     marginLeft:-220,
     marginTop:-100,
-    marginBottom: 250
+    marginBottom: 10
+  },
+  font1: {
+    fontSize: 25,
+    color: 'white',
+    marginRight: 50,
+    marginLeft: 50,
+    marginTop:-100,
+    marginBottom: 10
   },
   botao: {
     borderRadius: 40,
-    width: 220,
+    width: 200,
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: "center",
-    marginBottom: 420,
+   marginBottom: 200,
+  },
+  botao2: {
+    borderRadius: 40,
+    width: 200,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: "center",
+   marginBottom: 200,
   },
   button: {
     alignItems: "center",
@@ -97,7 +110,7 @@ const styles = StyleSheet.create({
     marginLeft:30
   },
   button1: {
-     alignItems: "center",
+    alignItems: "center",
     backgroundColor: "red",
     padding: 10,
     marginRight:30
@@ -108,7 +121,6 @@ const styles = StyleSheet.create({
   },
   linha:{
     flexDirection:'row',
-    backgroundColor:'white',
-    marginBottom:15
+    marginTop:20
   }
 });
