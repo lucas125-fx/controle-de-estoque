@@ -1,42 +1,60 @@
 import { StatusBar } from 'expo-status-bar';
+import { auth } from '../../Config/firebase';
 import { addDoc, collection, getDocs } from 'firebase/firestore';
 import React, { useState, useEffect } from "react"
 import { Safeareaview, StyleSheet, TouchableOpacity, Linking, Text, View, TextInput, Image } from 'react-native';
 import db from '../../Config/firebase';
 import Login from '../Login';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 export default function Cadastro({ navigation }) {
 
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState('');
 
+  // const request = async () => {
+  //   const querySnapshot = await getDocs(
+  //     collection(db, "Estoque")
+  //   );
+
+  //   querySnapshot.forEach(
+  //     (doc) => {
+  //       console.log(doc.data());
+  //     }
+  //   );
+  // }
+  // const insertData = async () => {
+  //   const docRef = await addDoc(collection(db, "Estoque"), {
+  //     email: email,
+  //     senha: password
+  //   });
+  //   console.log("Document written with ID: ", docRef.id);
+  // }
+
+  // useEffect(() => {
+  //   request();
+  // }, [])
+
+  // useEffect(() => {
+  //   console.log(email)
+  // }, [email])
+
   const request = async () => {
-    const querySnapshot = await getDocs(
-      collection(db, "Estoque")
-    );
-
-    querySnapshot.forEach(
-      (doc) => {
-        console.log(doc.data());
-      }
-    );
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // atualizar o meu usuário
+        updateProfile(user, {
+        })
+        console.log(user);
+      })
+      .catch(
+        (error) => {
+          console.log(error.code, error.message);
+        }
+      );
   }
-  const insertData = async () => {
-    const docRef = await addDoc(collection(db, "Estoque"), {
-      email: email,
-      senha: password
-    });
-    console.log("Document written with ID: ", docRef.id);
-  }
-
-  useEffect(() => {
-    request();
-  }, [])
-
-  useEffect(() => {
-    console.log(email)
-  }, [email])
-
+  
   return (
     <View style={styles.container}>
 
@@ -59,11 +77,11 @@ export default function Cadastro({ navigation }) {
           password={true}
           secureTextEntry={true}
           onChangeText={onChangePassword}
-          />
+        />
         <View >
           <TouchableOpacity
 
-            onPress={() => (insertData(),alert('Conta cadastrada com sucesso!!'),navigation.navigate('Login'))}
+            onPress={() => (request(), alert('Conta cadastrada com sucesso!!'), navigation.navigate('Login'))}
 
             style={styles.botao}>
 

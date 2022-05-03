@@ -4,18 +4,24 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import db from '../../Config/firebase';
 
 
-const listar = async ()=>{
-  const q = query(collection(db, "Produtos"), where("nome", "==", true));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
+// const listar = async ()=>{
+//   const q = query(collection(db, "Produtos"), where("nome", "==", true));
+//   const querySnapshot = await getDocs(q);
+//   querySnapshot.forEach((doc) => {
+//     // doc.data() is never undefined for query doc snapshots
+//     console.log(doc.id, " => ", doc.data());
+//   });
   
-} 
-
+// } 
 
 export default function Principal({navigation}){
+
+//   const querySnapshot = await getDocs(collection(db, "Produtos"));
+// querySnapshot.forEach((doc) => {
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(doc.id, " => ", doc.data());
+// });
+
  
   return (
     <View style={styles.container}>

@@ -16,7 +16,7 @@ export default function CadRegistros({navigation}) {
 
   const request = async () => {
     const querySnapshot = await getDocs(
-      collection(db, "CadRegistros")
+      collection(db, "Saída")
     );
 
     querySnapshot.forEach(
@@ -26,7 +26,7 @@ export default function CadRegistros({navigation}) {
     );
   }
   const insertData = async () => {
-    const docRef = await addDoc(collection(db, "CadRegistros"), {
+    const docRef = await addDoc(collection(db, "Saída"), {
       nome: nome,
       tipo: tipo,
       preco: preco,
@@ -91,7 +91,7 @@ export default function CadRegistros({navigation}) {
       />
       <View >
       <TouchableOpacity
-      onPress={() => (insertData(),alert('Produto cadastrado com sucesso!!'),navigation.navigate('Principal'))}
+      onPress={() => (insertData(),alert('Produto retirado com sucesso!!'),navigation.navigate('Principal'))}
         style={styles.botao}>
 
         <Text style={{ fontSize: 20, color: '#fff', }}>Registrar Saída</Text>

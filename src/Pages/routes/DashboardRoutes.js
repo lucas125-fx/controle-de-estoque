@@ -15,7 +15,7 @@ export default function DashboardRoutes(){
           <Tab.Screen name="Cadastro De Produtos"component={CadastroProdutos}/>
           <Tab.Screen name="Qrcode"component={Qrcode}/>  
           <Tab.Screen name="Saida"component={Saida} options={{title:'Registro de saida'}}/> 
-          <Tab.Screen name="CadRegistros"component={CadRegistros} options={{title:'cadastro de registros'}}/> 
+          <Tab.Screen name="CadRegistros"component={CadRegistros} options={{title:'Cadastro de registros'}}/> 
         </Tab.Navigator>
       
          
