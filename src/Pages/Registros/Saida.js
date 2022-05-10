@@ -28,7 +28,7 @@ export default function Saida({navigation}){
       <View style={styles.produtos}>
         <Text style={styles.font}>Seus Produtos:</Text>
       </View>
-      <View style={styles.linha}>
+      {/* <View style={styles.linha}>
         <TouchableOpacity
           onPress={() => (navigation.navigate('Cadastro De Produtos'))}
           style={styles.botao}>
@@ -39,7 +39,7 @@ export default function Saida({navigation}){
           style={styles.botao2}>
           <Text style={{ fontSize: 20, color: '#fff', }}>Ler Qr Code</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 }

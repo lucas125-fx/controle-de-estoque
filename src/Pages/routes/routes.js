@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 export default function Routes() {
     return (
       
-        <Stack.Navigator useLegacyImplementation={true} >
+        <Stack.Navigator initialRouteName="DashboardRoutes" >
           <Stack.Screen name="Login"component={Login}/>
           <Stack.Screen name="Cadastro"component={Cadastro}/>
           <Stack.Screen name="DashboardRoutes"component={DashboardRoutes} options={{headerShown:false}}/>

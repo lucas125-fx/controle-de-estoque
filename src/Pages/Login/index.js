@@ -9,28 +9,28 @@ import { async } from '@firebase/util';
 
 export default function Login({ navigation }) {
 
-  const [email, onChangeEmail] = useState("");
-  const [password, onChangePassword] = useState('');
+  // const [email, onChangeEmail] = useState("");
+  // const [password, onChangePassword] = useState('');
 
-  const request = async () => {
-    const querySnapshot = await getDocs(
-      collection(db, "Estoque")
-    );
+  // const request = async () => {
+  //   const querySnapshot = await getDocs(
+  //     collection(db, "Estoque")
+  //   );
 
-    querySnapshot.forEach(
-      (doc) => {
-        console.log(doc.data());
-      }
-    );
-  }
+  //   querySnapshot.forEach(
+  //     (doc) => {
+  //       console.log(doc.data());
+  //     }
+  //   );
+  // }
 
-  useEffect(() => {
-    request();
-  }, [])
+  // useEffect(() => {
+  //   request();
+  // }, [])
 
-  useEffect(() => {
-    console.log(email)
-  }, [email])
+  // useEffect(() => {
+  //   console.log(email)
+  // }, [email])
 
   return (
     <View style={styles.container}>
@@ -44,15 +44,15 @@ export default function Login({ navigation }) {
         <SafeAreaView>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeEmail}
-            value={email}
+            // onChangeText={onChangeEmail}
+            // value={email}
             placeholder="Email:"
             placeholderTextColor="#FFF"
           />
           <TextInput
             style={styles.input1}
-            onChangeText={onChangePassword}
-            value={password}
+            // onChangeText={onChangePassword}
+            // value={password}
             secureTextEntry={true}
             password={true}
             placeholder="Senha:"
