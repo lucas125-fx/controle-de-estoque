@@ -91,7 +91,7 @@ export default function CadRegistros({navigation}) {
       />
       <View >
       <TouchableOpacity
-      onPress={() => (insertData(),alert('Produto retirado com sucesso!!'),navigation.navigate('Principal'))}
+      onPress={() => (insertData(),alert('Produto retirado com sucesso!!'),navigation.navigate('Saida'))}
         style={styles.botao}>
 
         <Text style={{ fontSize: 20, color: '#fff', }}>Registrar Saída</Text>

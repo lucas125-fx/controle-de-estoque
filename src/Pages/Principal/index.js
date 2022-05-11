@@ -95,7 +95,7 @@ export default function Principal({ navigation }) {
                 <View style={styles.produtos_container_inside}>
                   <View>
                     <Text style={tw `text-white` }>
-                      Nome do Produto:
+                      Nome do Produto: 
                       {console.log(item)}
                     </Text>
                   </View>
@@ -108,7 +108,7 @@ export default function Principal({ navigation }) {
                 <View style={styles.produtos_container_inside}>
                   <View>
                     <Text style={tw `text-white` }>
-                      Meu ID:
+                      Meu ID: 
                     </Text>
                   </View>
                   <View>
@@ -120,7 +120,7 @@ export default function Principal({ navigation }) {
                 <View style={styles.produtos_container_inside}>
                   <View>
                     <Text style={tw `text-white` }>
-                      Meu Preço:
+                      Meu Preço: 
                     </Text>
                   </View>
                   <View>
@@ -132,7 +132,7 @@ export default function Principal({ navigation }) {
                 <View style={styles.produtos_container_inside}>
                   <View>
                     <Text style={tw `text-white` }>
-                      Quantidade disponível:
+                      Quantidade disponível: 
                     </Text>
                   </View>
                   <View>
@@ -144,7 +144,7 @@ export default function Principal({ navigation }) {
                 <View style={styles.produtos_container_inside}>
                   <View>
                     <Text style={tw `text-white` }>
-                      Tipo:
+                      Tipo: 
                     </Text>
                   </View>
                   <View>
